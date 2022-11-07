@@ -14,5 +14,31 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
+});
+
+/*
+|--------------------------------------------------------------------------
+| Mengirimkan data ke view
+|--------------------------------------------------------------------------
+|
+| Untuk mengirimkan data ke view dari routes, cukup menambahkan koma
+| setelah nama view yang mau ditampilkan, contoh:
+| ```php
+|   return view('nama_view', data)
+| ```
+| dibawah ini saya mengirimkan data ke view menggunakan associative array
+|
+*/
+
+Route::get('/about', function () {
+    return view('about', [
+        "name" => "Arman Dwi Pangestu",
+        "email" => "armandwi.pangestu7@gmail.com",
+        "image" => "arman.jpg"
+    ]);
+});
+
+Route::get('/blog', function () {
+    return view('posts');
 });
