@@ -14,7 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('home', [
+        "title" => "Home"
+    ]);
 });
 
 /*
@@ -33,6 +35,7 @@ Route::get('/', function () {
 
 Route::get('/about', function () {
     return view('about', [
+        "title" => "About",
         "name" => "Arman Dwi Pangestu",
         "email" => "armandwi.pangestu7@gmail.com",
         "image" => "arman.jpg"
@@ -40,5 +43,7 @@ Route::get('/about', function () {
 });
 
 Route::get('/blog', function () {
-    return view('posts');
+    return view('posts', [
+        "title" => "Posts"
+    ]);
 });
